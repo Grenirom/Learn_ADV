@@ -10,7 +10,7 @@ from config import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/account/", include("apps.account.urls_v1")),
-    path("api/v2/account/", include("apps.account.urls_v2")),
+    # path("api/v2/account/", include("apps.account.urls_v2")),
     path("api/v1/chat/", include("apps.chat.urls")),
     path("api/v1/health/", health),
 ] + debug_toolbar_urls()

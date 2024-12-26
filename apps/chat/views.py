@@ -2,12 +2,16 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework import mixins
 
 from apps.chat.models import Room, Message
 from apps.chat.serializers import RoomSerializer, MessageSerializer
 
 
-class RoomViewSet(viewsets.ModelViewSet):
+class RoomViewSet(mixins.CreateModelMixin,
+                   mixins.DestroyModelMixin,
+                   mixins.ListModelMixin,
+                   viewsets.GenericViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
     permission_classes = [IsAuthenticated]

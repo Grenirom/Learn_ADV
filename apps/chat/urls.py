@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from apps.chat.views import RoomViewSet, MessageViewSet
 
 router = DefaultRouter()
-router.register("rooms", RoomViewSet)
+router.register(r"rooms", RoomViewSet, basename='room')
 router.register("messages", MessageViewSet)
 
 urlpatterns = [

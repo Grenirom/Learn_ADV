@@ -60,3 +60,4 @@ pytest-drf
 pytest-django
 pytest-factoryboy
 pytest-asyncio
+stripe
